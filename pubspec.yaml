@@ -30,7 +30,12 @@ dev_dependencies:
   isar_generator: ^3.1.0+1
   build_runner: ^2.4.6
   riverpod_generator: ^2.3.5
+  riverpod_lint: ^2.3.3
   import_sorter: ^4.6.0
+  custom_lint: ^0.5.6
+
+dependency_overrides:
+  analyzer: "<=6.0.0"
 
 flutter:
   uses-material-design: true

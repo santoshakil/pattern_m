@@ -1,6 +1,15 @@
 include: package:flutter_lints/flutter.yaml
 
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+  plugins:
+    - custom_lint
+
 linter:
   rules:
-    avoid_print: false
     prefer_single_quotes: true
+
+custom_lint:
+  enable_all_lint_rules: false
+  rules:
