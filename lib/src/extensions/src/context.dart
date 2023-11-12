@@ -1,10 +1,10 @@
 part of '../extensions.dart';
 
 extension BuildContextExtension on BuildContext {
-  MediaQueryData get mediaQuery => MediaQuery.of(this);
+  MediaQueryData get mq => MediaQuery.of(this);
   ThemeData get theme => Theme.of(this);
 
-  Size get size => mediaQuery.size;
+  Size get size => mq.size;
   double get height => size.height;
   double get width => size.width;
 
@@ -16,15 +16,13 @@ extension BuildContextExtension on BuildContext {
 
   TextTheme get text => theme.textTheme;
 
-  Future<T?> push<T>(Widget page) =>
-      Navigator.of(this).push<T>(MaterialPageRoute(builder: (_) => page));
+  Future<T?> push<T>(Widget page) => Navigator.of(this).push<T>(MaterialPageRoute(builder: (_) => page));
 
-  Future<T?> pushReplacement<T>(Widget page) => Navigator.of(this)
-      .pushReplacement<T, T?>(MaterialPageRoute(builder: (_) => page));
+  Future<T?> pushReplacement<T>(Widget page) =>
+      Navigator.of(this).pushReplacement<T, T?>(MaterialPageRoute(builder: (_) => page));
 
   Future<T?> pushAndRemoveUntil<T>(Widget page) =>
-      Navigator.of(this).pushAndRemoveUntil<T>(
-          MaterialPageRoute(builder: (_) => page), (_) => false);
+      Navigator.of(this).pushAndRemoveUntil<T>(MaterialPageRoute(builder: (_) => page), (_) => false);
 
   void pop<T>([T? result]) => Navigator.of(this).pop(result);
 
