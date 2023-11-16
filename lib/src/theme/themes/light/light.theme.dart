@@ -1,8 +1,43 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' show Brightness, Color, ColorScheme, Colors, ThemeData, VisualDensity;
 
 ThemeData get lightTheme => ThemeData(
       visualDensity: VisualDensity.compact,
       colorSchemeSeed: Colors.teal,
+      // colorScheme: tealLightColorScheme,
       brightness: Brightness.light,
       useMaterial3: true,
     );
+
+const tealLightColorScheme = ColorScheme(
+  brightness: Brightness.light,
+  primary: Color(0xFF009688),
+  onPrimary: Color(0xFFFFFFFF),
+  primaryContainer: Color(0xFF4DB6AC),
+  onPrimaryContainer: Color(0xFF003E2F),
+  secondary: Color(0xFFF57C00),
+  onSecondary: Color(0xFF000000),
+  secondaryContainer: Color(0xFFFFD8B3),
+  onSecondaryContainer: Color(0xFF000000),
+  tertiary: Color(0xFF4CAF50),
+  onTertiary: Color(0xFFFFFFFF),
+  tertiaryContainer: Color(0xFFD8E9CD),
+  onTertiaryContainer: Color(0xFF003523),
+  error: Color(0xFFF44336),
+  onError: Color(0xFFFFFFFF),
+  errorContainer: Color(0xFFFFBAB0),
+  onErrorContainer: Color(0xFF000000),
+  background: Color(0xFFFFFFFF),
+  onBackground: Color(0xFF000000),
+  surface: Color(0xFFF2F2F2),
+  onSurface: Color(0xFF000000),
+  surfaceVariant: Color(0xFFE5E5E5),
+  onSurfaceVariant: Color(0xFF000000),
+  outline: Color(0xFF757575),
+  outlineVariant: Color(0xFFCACACA),
+  shadow: Color(0x12000000),
+  scrim: Color(0x33000000),
+  inverseSurface: Color(0xFF393939),
+  onInverseSurface: Color(0xFFFFFFFF),
+  inversePrimary: Color(0xFFB2DFDB),
+  surfaceTint: Color(0xFF009688),
+);
