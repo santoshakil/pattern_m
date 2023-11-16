@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart' show BuildContext, MaterialApp, MediaQuery, Widget;
-
+import 'package:flutter/material.dart' show BuildContext, MaterialApp, MediaQuery, TextScaler, Widget;
 import 'package:flutter_gen/gen_l10n/app_localizations.dart' show AppLocalizations;
 import 'package:flutter_riverpod/flutter_riverpod.dart' show ConsumerWidget, WidgetRef;
 
@@ -26,7 +25,7 @@ class MyApp extends ConsumerWidget {
       builder: (context, child) {
         t = AppLocalizations.of(context)!;
         return MediaQuery(
-          data: context.mq.copyWith(textScaleFactor: 1.0, devicePixelRatio: 1.0),
+          data: context.mq.copyWith(textScaler: const TextScaler.linear(1)),
           child: child ?? const AppRouter(),
         );
       },
