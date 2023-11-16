@@ -1,6 +1,19 @@
 part of '../extensions.dart';
 
 extension ObjectExt on Object? {
+  T? encode<T>() {
+    try {
+      return isMap
+          ? (T as dynamic).fromJson(this)
+          : isString
+              ? (T as dynamic).fromRawJson(this)
+              : null;
+    } catch (e) {
+      debugPrint(e.toString());
+      return null;
+    }
+  }
+
   T? asT<T>() => this is T ? this as T : null;
 
   bool isType<T>() => this is T;
@@ -30,23 +43,11 @@ extension ObjectExt on Object? {
   bool get isEmptyIterable => this is Iterable && (this as Iterable).isEmpty;
   bool get isDateTime => this is DateTime;
   bool get isNotDateTime => this is! DateTime;
-
-  T? encode<T>() {
-    try {
-      return _v?.fromJson();
-    } catch (e) {
-      debugPrint(e.toString());
-      return null;
-    }
-  }
-
-  get _v => this;
 }
 
-void testObjectExt() {
-  late final TestObjectExt? test;
-  test = const TestObjectExt();
-  debugPrint(test.encode<TestObjectExt>().toString());
+void testObjectExt(Object? v) {
+  final TestObjectExt? x = v.encode<TestObjectExt>();
+  debugPrint('$x');
 }
 
 class TestObjectExt {
