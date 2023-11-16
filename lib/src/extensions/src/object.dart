@@ -46,7 +46,7 @@ extension ObjectExt on Object? {
 }
 
 void testObjectExt(Object? v) {
-  final TestObjectExt? x = v.encode<TestObjectExt>();
+  final x = v.encode<TestObjectExt>();
   debugPrint('$x');
 }
 
