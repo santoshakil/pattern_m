@@ -44,15 +44,15 @@ extension ObjectExt on Object? {
 }
 
 void testObjectExt() {
-  late final Test? test;
-  test = const Test();
-  debugPrint(test.encode<Test>().toString());
+  late final TestObjectExt? test;
+  test = const TestObjectExt();
+  debugPrint(test.encode<TestObjectExt>().toString());
 }
 
-class Test {
-  const Test();
-  factory Test.fromRawJson(String str) => const Test();
-  factory Test.fromJson(Map<String, dynamic> json) => const Test();
+class TestObjectExt {
+  const TestObjectExt();
+  factory TestObjectExt.fromRawJson(String str) => const TestObjectExt();
+  factory TestObjectExt.fromJson(Map<String, dynamic> json) => const TestObjectExt();
   Map<String, dynamic> toRawJson() => {};
   Map<String, dynamic> toJson() => {};
 }
