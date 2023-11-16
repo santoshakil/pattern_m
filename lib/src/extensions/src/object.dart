@@ -1,6 +1,6 @@
 part of '../extensions.dart';
 
-extension ObjectExt on Object {
+extension ObjectExt on Object? {
   bool isType<T>() => this is T;
   bool isNotType<T>() => this is! T;
   bool get isBool => this is bool;
