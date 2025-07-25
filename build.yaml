@@ -1,0 +1,21 @@
+targets:
+  $default:
+    builders:
+      riverpod_generator:
+        options:
+          enable_provider_dependencies: true
+      freezed:
+        options:
+          # Makes all properties required by default
+          # Override with @Default annotation when needed
+          all_constructors_private: false
+      json_serializable:
+        options:
+          # Use snake_case for JSON fields
+          field_rename: snake
+          # Generate both fromJson and toJson
+          create_to_json: true
+          # Fail on missing keys
+          checked: true
+          # Explicit conversion for non-nullable fields
+          explicit_to_json: true
